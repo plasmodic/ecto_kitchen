@@ -56,3 +56,5 @@ cd ..
 # build dirs have python_path.sh scripts in them.
 
 
+# In ecto_opencv/samples there are a variety of scripts called example*.py
+
