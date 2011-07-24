@@ -1,6 +1,8 @@
-#!/bin/sh -ex
+#!/bin/bash -ex
 
 # quick script to test that each project is buildable outside of the kitchen
+
+. /opt/ros/unstable/setup.bash
 
 TOP=@CMAKE_BINARY_DIR@/standalone_build
 
