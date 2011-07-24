@@ -8,7 +8,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin)
 add_subdirectory(ecto)
 set(ecto_DIR ${CMAKE_CURRENT_BINARY_DIR})
 
-set(KITCHEN_PROJECTS ecto_opencv ecto_pcl ecto_ros)
+set(KITCHEN_PROJECTS opencv pcl ros)
 
 foreach(proj ${KITCHEN_PROJECTS})
   add_subdirectory(${proj})
