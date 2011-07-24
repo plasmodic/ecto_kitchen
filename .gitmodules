@@ -10,3 +10,12 @@
 [submodule "ecto_ros"]
 	path = ecto_ros
 	url = git://github.com/plasmodic/ecto_ros.git
+[submodule "pcl"]
+	path = pcl
+	url = git://github.com/plasmodic/ecto_pcl.git
+[submodule "opencv"]
+	path = opencv
+	url = git://github.com/plasmodic/ecto_opencv.git
+[submodule "ros"]
+	path = ros
+	url = git://github.com/plasmodic/ecto_ros.git
