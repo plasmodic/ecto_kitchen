@@ -1,0 +1,21 @@
+#!/bin/sh -ex
+
+# quick script to test that each project is buildable outside of the kitchen
+
+TOP=@CMAKE_BINARY_DIR@/standalone_build
+
+mkdir $TOP
+cd $TOP
+mkdir ecto
+cd ecto
+cmake @ecto_SOURCE_DIR@
+make -j8
+
+for proj in ecto_opencv ecto_pcl ecto_ros
+do
+    cd $TOP
+    mkdir $proj
+    cd $proj
+    cmake @CMAKE_SOURCE_DIR@/$proj -Decto_DIR=$TOP/ecto
+    make -j8
+done
