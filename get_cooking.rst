@@ -38,3 +38,13 @@ submodule.  If you are one of the ppl who can push to plasmodic::
 
 git submodule foreach 'git remote add plasmodic git@github.com:plasmodic/$name.git' 
 
+
+
+General workflow is this:
+
+cd to submodule directory e.g. opencv
+git checkout master
+make some commits and BE SURE THEY ARE PUSHED
+go up to ecto_kitchen
+git status will show changed subdirs, git add/commit/push them
+

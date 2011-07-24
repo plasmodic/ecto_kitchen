@@ -11,7 +11,7 @@ cd ecto
 cmake @ecto_SOURCE_DIR@
 make -j8
 
-for proj in ecto_opencv ecto_pcl ecto_ros
+for proj in opencv pcl ros
 do
     cd $TOP
     mkdir $proj
