@@ -14,11 +14,13 @@ How To Get Cooking in the Ecto Kitchen
 * Update the submodules::
 
     % cd ecto_kitchen 
+
     % git submodule init
     Submodule 'ecto' (git://github.com/plasmodic/ecto.git) registered for path 'ecto'
     Submodule 'opencv' (git://github.com/plasmodic/ecto_opencv.git) registered for path 'opencv'
     Submodule 'pcl' (git://github.com/plasmodic/ecto_pcl.git) registered for path 'pcl'
     Submodule 'ros' (git://github.com/plasmodic/ecto_ros.git) registered for path 'ros'
+
     % git submodule update
     Cloning into ecto...
     remote: Counting objects: 6149, done.
@@ -142,13 +144,112 @@ your github username as an argument::
   straszheim	git@github.com:straszheim/ecto_ros.git (fetch)
   straszheim	git@github.com:straszheim/ecto_ros.git (push)
   
-General workflow is this [FIXME: elaborate, example]:
+Now I'll do some development.  Note that the submodules initially have
+'detached heads' which means you can't commit to them::
 
-* cd to submodule directory e.g. opencv
-* git checkout master
-* make some commits and BE SURE THEY ARE PUSHED
-* go up to ecto_kitchen
-* git status will show changed subdirs, git add/commit/push them
+  % cd pcl
+
+  % git status
+  # Not currently on any branch.
+  nothing to commit (working directory clean)
+
+Check out e.g. the master branch::
+
+  % git checkout master
+  Switched to branch 'master'
+
+  % git status
+  # On branch master
+  nothing to commit (working directory clean)
+
+make some changes::
+ 
+  % emacs -nw CMakeLists.txt
+
+  % git add CMakeLists.txt 
+
+  % git commit -m "unimportant tweak"
+  [master 5f32919] unimportant tweak
+   1 files changed, 2 insertions(+), 0 deletions(-)
+
+  % git status 
+  # On branch master
+  # Your branch is ahead of 'origin/master' by 1 commit.
+  #
+  nothing to commit (working directory clean)
+
+And push. In this case I'll push to my clone, you'll probably push to
+your clone with your name::
+
+  % git push straszheim master
+  Counting objects: 5, done.
+  Delta compression using up to 8 threads.
+  Compressing objects: 100% (3/3), done.
+  Writing objects: 100% (3/3), 341 bytes, done.
+  Total 3 (delta 2), reused 0 (delta 0)
+  To git@github.com:straszheim/ecto_pcl.git
+     5ce91de..5f32919  master -> master
+
+Now I can update the kitchen.  I see that git knows something has
+happened::
+
+  % cd ..
+
+Submodule summary shows the new commits in the submodules::
+
+  % git submodule summary
+  * pcl 2377ba7...5f32919 (1):
+    > unimportant tweak
+
+The submodule status shows that the hash for the pcl submodule has changed::
+
+  % git submodule status
+   87da4ed04ba46e9e852d82f5c7a2c9015a888389 ecto (heads/master)
+   2a43200bec3b3c599a64d84fbc64f0e973e5306a opencv (heads/master)
+  +5f329192a280665eb8478f889b25465025fd8203 pcl (heads/master)
+   10f0715db9455887934f6855edaa1ab3aea71001 ros (heads/master)
+  
+And the regular old status shows that the pcl subdir has changed::
+
+
+  % git status
+  # On branch master
+  # Your branch is ahead of 'origin/master' by 1 commit.
+  #
+  # Changes not staged for commit:
+  #   (use "git add <file>..." to update what will be committed)
+  #   (use "git checkout -- <file>..." to discard changes in working directory)
+  #
+  #	modified:   pcl (new commits)
+  #
+  no changes added to commit (use "git add" and/or "git commit -a")
+
+I commit pcl as if it were a file::
+
+  % git add pcl  
+  % git commit -m "update pcl"
+  [master d99026f] update pcl
+   1 files changed, 1 insertions(+), 1 deletions(-)
+  
+And now I can push to my clone of the kitchen::
+
+  % git push straszheim master
+  Counting objects: 3, done.
+  Delta compression using up to 8 threads.
+  Compressing objects: 100% (2/2), done.
+  Writing objects: 100% (2/2), 257 bytes, done.
+  Total 2 (delta 1), reused 0 (delta 0)
+  To git@github.com:straszheim/ecto_kitchen.git
+     7fd45de..d99026f  master -> master
+  
+*NOTE* that the kitchen only records a repository and a hash for each
+submodule, no more, and it does not verify that this hash actually
+exists... that is, you have to be sure you've pushed what the
+submodule refers to.
+
+FIXME: how do I point the ecto_pcl submodule of my clone of
+ecto_kitchen to my clone of ecto_pcl
+
 
 
 
