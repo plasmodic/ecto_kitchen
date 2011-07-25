@@ -145,7 +145,7 @@ your github username as an argument::
   straszheim	git@github.com:straszheim/ecto_ros.git (push)
   
 Now I'll do some development.  Note that the submodules initially have
-'detached heads' which means you can't commit to them::
+'detached heads' which can be tricky::
 
   % cd pcl
 
@@ -153,7 +153,7 @@ Now I'll do some development.  Note that the submodules initially have
   # Not currently on any branch.
   nothing to commit (working directory clean)
 
-Check out e.g. the master branch::
+So check out e.g. the master branch::
 
   % git checkout master
   Switched to branch 'master'
@@ -162,7 +162,19 @@ Check out e.g. the master branch::
   # On branch master
   nothing to commit (working directory clean)
 
-make some changes::
+Or (handy trick) if you want to do this for all submodules::
+
+  % git submodule foreach git checkout master
+  Entering 'ecto'
+  Previous HEAD position was 87da4ed... small ecto kitchen tweaks
+  Switched to branch 'master'
+  Entering 'opencv'
+  Previous HEAD position was 2a43200... work under standalone build
+  Switched to branch 'master'
+
+  [ etc ]
+
+Having checkout out master, make some changes::
  
   % emacs -nw CMakeLists.txt
 
