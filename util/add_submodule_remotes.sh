@@ -9,8 +9,8 @@ echo "Adding remotes for plasmodic and $MY_GITHUB_NAME"
 
 doit () 
 {
-    git remote set-url plasmodic git@github.com:plasmodic/$1.git
-    git remote set-url $MY_GITHUB_NAME git@github.com:$MY_GITHUB_NAME/$1.git
+    git remote add plasmodic git@github.com:plasmodic/$1.git
+    git remote add $MY_GITHUB_NAME git@github.com:$MY_GITHUB_NAME/$1.git
     echo "========= $1 =========="
     git remote -v
 }
