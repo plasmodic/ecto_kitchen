@@ -142,11 +142,14 @@ your github username as an argument::
   straszheim	git@github.com:straszheim/ecto_ros.git (fetch)
   straszheim	git@github.com:straszheim/ecto_ros.git (push)
   
-General workflow is this:
+General workflow is this [FIXME: elaborate, example]:
 
 cd to submodule directory e.g. opencv
 git checkout master
 make some commits and BE SURE THEY ARE PUSHED
 go up to ecto_kitchen
 git status will show changed subdirs, git add/commit/push them
+
+
+
 

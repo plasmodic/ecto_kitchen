@@ -17,6 +17,6 @@ endforeach()
 #
 # for kitchen testing
 #
-configure_file(${ecto_kitchen_SOURCE_DIR}/test/build_as_standalones.sh.in
+configure_file(${ecto_kitchen_SOURCE_DIR}/util/build_as_standalones.sh.in
   build_as_standalones.sh
   @ONLY)
