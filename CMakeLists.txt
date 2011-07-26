@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
-
 project(ecto_kitchen)
+message(STATUS "--- ${PROJECT_NAME} ---")
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin)
@@ -20,3 +20,9 @@ endforeach()
 configure_file(${ecto_kitchen_SOURCE_DIR}/util/build_as_standalones.sh.in
   build_as_standalones.sh
   @ONLY)
+
+string(REPLACE ";" " " KITCHEN_PROJECTS_STR "${KITCHEN_PROJECTS}")
+configure_file(${ecto_kitchen_SOURCE_DIR}/util/python_path.sh.in
+  ${CMAKE_BINARY_DIR}/python_path.sh
+  @ONLY
+  )
