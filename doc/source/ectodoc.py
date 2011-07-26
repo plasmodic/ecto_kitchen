@@ -201,9 +201,11 @@ def docize(mod):
 def do_ectodoc(app, doctree):
 
     for node in doctree.traverse(ectodoc):
-        m = __import__(node.modname)
+        c = __import__(node.modname, fromlist=[str(node.celltype)])
+        if node.celltype not in c.__dict__:
+            raise RuntimeError("Cell %s not found in module %s" % (node.celltype, str(c)))
 
-        new_node = docize(m.__dict__[node.celltype])
+        new_node = docize(c.__dict__[node.celltype])
         # new_node['language'] = 'text'
         node.replace_self(new_node)
 
