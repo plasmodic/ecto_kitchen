@@ -20,3 +20,5 @@ endforeach()
 configure_file(${ecto_kitchen_SOURCE_DIR}/util/build_as_standalones.sh.in
   build_as_standalones.sh
   @ONLY)
+
+add_subdirectory(doc)
