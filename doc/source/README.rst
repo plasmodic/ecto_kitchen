@@ -341,7 +341,7 @@ Git submodule-fu
 
 Fetch (but not pull/merge) all submodules, this is always safe to do::
 
-  git submodule foreach git fetch --all
+  % git submodule foreach git fetch --all
 
 Submodule status::
 

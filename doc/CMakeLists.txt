@@ -6,6 +6,10 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Makefile.in
   ${CMAKE_CURRENT_BINARY_DIR}/Makefile.sphinx
   @ONLY)
 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ecto_kitchen_config.py.in
+  ${CMAKE_CURRENT_BINARY_DIR}/ecto_kitchen_config.py
+  @ONLY)
+
 add_custom_target(doc
   COMMENT "Generate all documentation" VERBATIM
   )

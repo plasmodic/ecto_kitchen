@@ -20,11 +20,10 @@ import sys, os, subprocess
 # TDS:  the only way to get parameters in to this script is via env variables,
 # see the generated Makefile.in that knows where things are
 #
-sys.path += [os.path.abspath('.'), os.environ['ECTODOC_BINDIR'], os.environ['ECTODOC_PYTHONPATH']]
+sys.path += [os.path.abspath('.')]
 print "SYS.PATH===", sys.path
 
-breathe_default_project = 'ecto'
-breathe_projects = dict(ecto=os.environ['DOXYGEN_XML_DIR'])
+from ecto_kitchen_config import *
 
 # -- General configuration -----------------------------------------------------
 
@@ -70,10 +69,6 @@ print "treehash=", treehash
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
-# The short X.Y version.
-version = '0.1'
-# The full version, including alpha/beta/rc tags.
-release = '0.1.0'
 
 print "dochash=", dochash
 copyright = u'2011,  Willow Garage, Inc'
@@ -140,7 +135,7 @@ html_theme_path = ['.']
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = 'ecto'
+html_title = 'ecto kitchen ' + version
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -238,4 +233,3 @@ rst_epilog="""
 
 """
 
-# print "BREATHE_PROJECTS=", breathe_projects

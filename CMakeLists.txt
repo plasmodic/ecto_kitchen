@@ -25,7 +25,7 @@ configure_file(${ecto_kitchen_SOURCE_DIR}/util/build_as_standalones.sh.in
 
 add_subdirectory(doc)
 
-string(REPLACE ";" " " KITCHEN_PROJECTS_STR "${KITCHEN_PROJECTS}")
+string(REPLACE ";" " " KITCHEN_PROJECTS_STR "ecto;${KITCHEN_PROJECTS}")
 configure_file(${ecto_kitchen_SOURCE_DIR}/util/python_path.sh.in
   ${CMAKE_BINARY_DIR}/python_path.sh
   @ONLY
