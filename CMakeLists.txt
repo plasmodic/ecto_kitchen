@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 2.8)
 project(ecto_kitchen)
 message(STATUS "--- ${PROJECT_NAME} ---")
 
+set(ECTO_KITCHEN_VERSION 11.07.0)
+
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin)
 enable_testing()
