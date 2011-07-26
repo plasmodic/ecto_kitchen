@@ -223,7 +223,6 @@ The submodule status shows that the hash for the pcl submodule has changed::
   
 And the regular old status shows that the pcl subdir has changed::
 
-
   % git status
   # On branch master
   # Your branch is ahead of 'origin/master' by 1 commit.
@@ -259,10 +258,81 @@ submodule, no more, and it does not verify that this hash actually
 exists... that is, you have to be sure you've pushed what the
 submodule refers to.
 
-FIXME: how do I point the ecto_pcl submodule of my clone of
-ecto_kitchen to my clone of ecto_pcl
+Workflow for code that is not yet in ecto_kitchen
+-------------------------------------------------
 
+Assume I have a bunch of changes on a special branch called
+``awesome`` that is in my clone of ``ecto_pcl``.  Of course you are
+welcome to clone ecto_kitchen itself and manage the submodules
+yourself.  Perhaps more convenient (until we get our workflows
+properly grokked):
 
+* Clone ecto_kitchen::
+
+    % git clone git://github.com/plasmodic/ecto_kitchen.git ek
+    Initialized empty Git repository in /home/ek/.git/
+    remote: Counting objects: 79, done.
+    remote: Compressing objects: 100% (60/60), done.
+    remote: Total 79 (delta 36), reused 59 (delta 16)
+    Receiving objects: 100% (79/79), 13.22 KiB, done.
+    Resolving deltas: 100% (36/36), done.
+    
+* Modify your .gitmodules appropriately.  Here I have pointed ecto_pcl
+  to my clone::
+
+    % cat .gitmodules 
+    [submodule "ecto"]
+    	path = ecto
+    	url = git://github.com/plasmodic/ecto.git
+    [submodule "pcl"]
+    	path = pcl
+    	url = git@github.com:straszheim/ecto_pcl.git   # <-- now git@ and straszheim
+    [submodule "opencv"]
+    	path = opencv
+    	url = git://github.com/plasmodic/ecto_opencv.git
+    [submodule "ros"]
+    	path = ros
+    	url = git://github.com/plasmodic/ecto_ros.git
+    
+
+* ``init`` and ``update`` as usual::
+
+    % git submodule init
+    Submodule 'ecto' (git://github.com/plasmodic/ecto.git) registered for path 'ecto'
+    Submodule 'opencv' (git://github.com/plasmodic/ecto_opencv.git) registered for path 'opencv'
+    Submodule 'pcl' (git@github.com:straszheim/ecto_pcl.git) registered for path 'pcl'  # <-- here
+    Submodule 'ros' (git://github.com/plasmodic/ecto_ros.git) registered for path 'ros'
+
+    % git submodule update
+    Initialized empty Git repository in /home/ek/ecto/.git/
+    remote: Counting objects: 6154, done.
+    remote: Compressing objects: 100% (1979/1979), done.
+    remote: Total 6154 (delta 4018), reused 5944 (delta 3811)
+    Receiving objects: 100% (6154/6154), 2.13 MiB | 1.33 MiB/s, done.
+    Resolving deltas: 100% (4018/4018), done.
+    Submodule path 'ecto': checked out '904fb757e917137ee6b33d39fd4ce5eeb8d5a97a'
+    Initialized empty Git repository in /home/ek/opencv/.git/
+    remote: Counting objects: 1313, done.
+    remote: Compressing objects: 100% (539/539), done.
+    remote: Total 1313 (delta 866), reused 1186 (delta 739)
+    Receiving objects: 100% (1313/1313), 377.49 KiB, done.
+    Resolving deltas: 100% (866/866), done.
+    Submodule path 'opencv': checked out 'a92bd1f1eba7f37875a464f75813907ac3c1d9b2'
+    Initialized empty Git repository in /home/ek/pcl/.git/
+    remote: Counting objects: 279, done.
+    remote: Compressing objects: 100% (105/105), done.
+    remote: Total 279 (delta 168), reused 268 (delta 161)
+    Receiving objects: 100% (279/279), 58.56 KiB, done.
+    Resolving deltas: 100% (168/168), done.
+    Submodule path 'pcl': checked out '17a58172d3b40628db32d25cb34f64df49c27a5d'
+    Initialized empty Git repository in /home/ek/ros/.git/
+    remote: Counting objects: 335, done.
+    remote: Compressing objects: 100% (176/176), done.
+    remote: Total 335 (delta 206), reused 265 (delta 136)
+    Receiving objects: 100% (335/335), 56.51 KiB, done.
+    Resolving deltas: 100% (206/206), done.
+    Submodule path 'ros': checked out '10f0715db9455887934f6855edaa1ab3aea71001'
+    
 
 
 
