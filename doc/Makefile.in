@@ -58,6 +58,7 @@ links:
 	ln -sf @ecto_kitchen_SOURCE_DIR@/doc/source/ecto_theme $(BUILDDIR)/source
 	ln -sf @ecto_kitchen_SOURCE_DIR@/doc/source/ectodoc.py $(BUILDDIR)/source
 	ln -sf @ecto_kitchen_SOURCE_DIR@/doc/source/index.rst $(BUILDDIR)/source
+	ln -sf @ecto_kitchen_SOURCE_DIR@/doc/source/README.rst $(BUILDDIR)/source
 	ln -sf @ecto_kitchen_SOURCE_DIR@/doc/source/_static $(BUILDDIR)/source
 	ln -sf @ecto_kitchen_SOURCE_DIR@/doc/source/_templates $(BUILDDIR)/source
 	ln -sf @ecto_kitchen_SOURCE_DIR@/doc/source/art $(BUILDDIR)/source
