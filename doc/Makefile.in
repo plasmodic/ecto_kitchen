@@ -1,10 +1,9 @@
+#
 # Makefile for Sphinx documentation
 #
 export PYTHONPATH = @CMAKE_LIBRARY_OUTPUT_DIRECTORY@:@ecto_SOURCE_DIR@/python
+
 # You can set these variables from the command line.
-MEHSPHINXOPTS    = \
-	-D version=@ECTO_KITCHEN_VERSION@ \
-	-D release=@ECTO_VERSION@
 
 SPHINXOPTS = \
 	-D version=@ECTO_KITCHEN_VERSION@ \
@@ -16,7 +15,7 @@ SPHINXBUILD   = \
 	ECTODOC_PYTHONPATH=@ecto_SOURCE_DIR@/python \
 	sphinx-build
 
-PAPER         =
+PAPER         = letter
 BUILDDIR      = @CMAKE_CURRENT_BINARY_DIR@
 
 # Internal variables.

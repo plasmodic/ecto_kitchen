@@ -336,3 +336,23 @@ properly grokked):
 
 
 
+Git submodule-fu
+----------------
+
+Fetch (but not pull/merge) all submodules, this is always safe to do::
+
+  git submodule foreach git fetch --all
+
+Submodule status::
+
+  % git submodule status
+   08e12656332147a0831231e93098ed985af10212 ecto (heads/master)
+   c0d7e0d74d047eef67452210f169a191826e3aef opencv (heads/master)
+   494fa25a4cf0d719b8d7c565ca685f7235771f2d pcl (heads/master)
+   ebda10bfb71c8b1c18d407e87d8ddc4f953eb897 ros (heads/master)
+       
+Show my local changes vs heads of all submodules (assuming you've fetched)::
+
+  % git submodule foreach git diff --stat plasmodic/master
+
+
