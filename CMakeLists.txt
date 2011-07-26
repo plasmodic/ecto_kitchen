@@ -48,3 +48,6 @@ check_hashbangs(ecto/samples)
 check_hashbangs(opencv/samples)
 check_hashbangs(pcl/scripts)
 check_hashbangs(ros/samples)
+
+add_test(check_hashbangs ${CMAKE_MAKE_PROGRAM} -C ${CMAKE_BINARY_DIR} check_hashbangs)
+

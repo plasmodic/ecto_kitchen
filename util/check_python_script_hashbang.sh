@@ -15,6 +15,7 @@ if [ ! "$FIRST" = "#!/usr/bin/env python" ] ; then
 fi
 if [ ! -x $1 ] ; then
     echo "$1: FAIL not executable"
+    return 1
 fi
 echo "$1: okay."
 return 0
