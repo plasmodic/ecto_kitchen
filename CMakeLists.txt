@@ -32,3 +32,18 @@ configure_file(${ecto_kitchen_SOURCE_DIR}/util/python_path.sh.in
   )
 message(STATUS "To set up your python path you may source the file 'python_path.sh'")
 message(STATUS "  in the build directory.")
+
+add_custom_target(check_hashbangs)
+macro(check_hashbangs SCRIPTDIR)
+
+  file(GLOB_RECURSE _python_scripts ${CMAKE_CURRENT_SOURCE_DIR}/${SCRIPTDIR}/*.py)
+  foreach(file ${_python_scripts})
+    add_custom_command(TARGET check_hashbangs
+      COMMAND ${ecto_kitchen_SOURCE_DIR}/util/check_python_script_hashbang.sh ${file}
+      )
+  endforeach()
+endmacro()
+
+check_hashbangs(ecto/samples)
+check_hashbangs(opencv/samples)
+check_hashbangs(pcl/scripts)
