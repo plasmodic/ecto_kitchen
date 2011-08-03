@@ -1,6 +1,6 @@
 [submodule "ecto"]
 	path = ecto
-	url = git@github.com:straszheim/ecto.git
+	url = git://github.com/plasmodic/ecto.git
 [submodule "pcl"]
 	path = pcl
 	url = git://github.com/plasmodic/ecto_pcl.git
