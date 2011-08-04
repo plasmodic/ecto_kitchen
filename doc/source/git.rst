@@ -1,3 +1,5 @@
+.. highlight:: ectosh
+
 Ecto dev practices with git
 ===========================
 
