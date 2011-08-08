@@ -1,16 +1,9 @@
-Larger, Integrated Examples
-===========================
+Examples
+========
 
-Simple video capture
---------------------
+.. toctree::
+   :maxdepth: 1
 
-Direct from the device, via opencv:
-
-Download: :download:`vidcap.py`
-
-.. literalinclude:: vidcap.py
-
-.. ectoplot:: vidcap.py plasm
-
+   examples/vidcap
 
 
