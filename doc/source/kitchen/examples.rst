@@ -1,5 +1,5 @@
-Examples
-========
+Larger, Integrated Examples
+===========================
 
 Simple video capture
 --------------------
@@ -11,5 +11,6 @@ Download: :download:`vidcap.py`
 .. literalinclude:: vidcap.py
 
 .. ectoplot:: vidcap.py plasm
+
 
 
