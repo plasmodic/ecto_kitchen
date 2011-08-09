@@ -1,5 +1,5 @@
 Getting Kinect data via ROS subscription
-----------------------------------------
+========================================
 
 .. highlight:: ectosh
 
