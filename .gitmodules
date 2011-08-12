@@ -1,5 +1,6 @@
 [submodule "ecto"]
 	path = ecto
+	branch = ameoba-beta0
 	url = git://github.com/plasmodic/ecto.git
 [submodule "pcl"]
 	path = pcl
