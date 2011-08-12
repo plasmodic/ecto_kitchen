@@ -202,4 +202,3 @@ cells in the plasm while the plasm is executing.
 
 .. ectoplot:: kinect_from_ros.py plasm
 
-You can also run ``rviz`` and look at the point clouds.
