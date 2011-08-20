@@ -11,3 +11,6 @@
 [submodule "ros"]
 	path = ros
 	url = git://github.com/plasmodic/ecto_ros.git
+[submodule "openni"]
+	path = openni
+	url = git://github.com/plasmodic/ecto_openni.git
