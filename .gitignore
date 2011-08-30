@@ -2,5 +2,7 @@
 .cproject
 ._*
 build/
+electric/
+electric-4.1/
 *.pyc
 .pydevproject
