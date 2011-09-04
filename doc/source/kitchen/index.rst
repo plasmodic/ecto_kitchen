@@ -12,4 +12,5 @@ Kitchen Documentation
    
    examples/index
    git
+   virtualenv
 
