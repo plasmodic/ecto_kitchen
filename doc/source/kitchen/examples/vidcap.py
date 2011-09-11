@@ -14,7 +14,7 @@ video_display = highgui.imshow('imshow',
                                name='video_cap', waitKey=2)
 
 plasm.connect(video_cap['image'] >> fps['image'],
-              fps['image'] >> video_display['input'],
+              fps['image'] >> video_display['image'],
               )
 
 
