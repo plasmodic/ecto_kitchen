@@ -53,6 +53,11 @@ to the name of the directory that the boost tarball unpacks to.  With
 others it can get it wrong... ``tmp`` is a terrible name for a
 package.
   
+When you then want to detect this new boost when running cmake, use
+``BOOST_ROOT`` (see also the cmake docs for ``FindBoost``), e.g.::
+
+   cmake ../src -DBOOST_ROOT=/usr/local/boost-1.40.0
+
 
 Ubuntu
 ======
