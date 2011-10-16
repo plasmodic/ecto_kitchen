@@ -28,5 +28,4 @@ ecto.
 
    kitchen/index.rst
    todo.rst
-   dependencies.rst
 
