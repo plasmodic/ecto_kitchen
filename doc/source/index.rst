@@ -28,6 +28,5 @@ ecto.
 
    kitchen/index.rst
    todo.rst
-   codingstandards.rst
    dependencies.rst
 
