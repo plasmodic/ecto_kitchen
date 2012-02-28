@@ -15,4 +15,4 @@
 	url = git://github.com/plasmodic/ecto_openni.git
 [submodule "catkin"]
 	path = catkin
-	url = git@github.com:willowgarage/catkin.git
+	url = git://github.com/willowgarage/catkin.git
