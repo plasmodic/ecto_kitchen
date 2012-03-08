@@ -12,6 +12,4 @@ git submodule init
 git submodule update
 git submodule foreach git checkout master
 ln -s ./catkin/toplevel.cmake CMakeLists.txt
-mkdir build
-cmake -C build
-make -C build
+mkdir build && cd build && cmake ../ && make -j4
