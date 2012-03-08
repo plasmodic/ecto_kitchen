@@ -6,8 +6,12 @@ of ecto cells.
 
 Generated docs available at http://ecto.willowgarage.com/
 
+To install, please run:
 
-
-
-
-
+git submodule init
+git submodule update
+git submodule foreach git checkout master
+ln -s ./catkin/toplevel.cmake CMakeLists.txt
+mkdir build
+cmake -C build
+make -C build
